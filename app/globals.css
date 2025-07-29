@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gradiente animado para a sidebar - Mais amarelo e vertical */
+@keyframes gradientShift {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(180deg, #fef3c7, #fde047, #facc15, #eab308, #ca8a04);
+  background-size: 100% 400%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* Variação mais suave do gradiente */
+.animated-gradient-soft {
+  background: linear-gradient(180deg, #fef3c7, #fde047, #facc15, #eab308, #ca8a04);
+  background-size: 100% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Efeito de hover suave */
+.sidebar-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
